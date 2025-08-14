@@ -1,25 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-interface JodiData {
-  date: string;
-  open: string;
-  close: string;
-  jodi: string;
-  total: number;
-  status: "win" | "loss" | "pending";
-}
+// JodiData interface removed as it's not used
 
 interface JodiChartProps {
   gameName: string;
   gameId: string;
-  category: string;
+  // category parameter removed as it's not used
 }
 
 const JodiChart: React.FC<JodiChartProps> = ({
   gameName,
   gameId,
-  category,
+  // category parameter removed as it's not used
 }) => {
   const [selectedPeriod, setSelectedPeriod] = useState<
     "week" | "month" | "year"

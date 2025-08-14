@@ -13,7 +13,7 @@ interface FreeGuess {
 
 const FreeGuessingPage: React.FC = () => {
   const [selectedGame, setSelectedGame] = useState("all");
-  const [showCalculator, setShowCalculator] = useState(false);
+  // showCalculator state removed as it's not used
 
   // Mock data for free guesses
   const freeGuesses: FreeGuess[] = [

@@ -2046,40 +2046,46 @@ body {
   color: #fff;
 }
 .weekly-charts {
-  padding: 3rem 1rem;
+  padding: 2rem 1rem; /* reduce padding for minimal gap */
   background-color: #fff;
   text-align: center;
+  display: flex;
+  justify-content: center; /* center horizontally */
 }
 
 .weekly-charts h2 {
-  margin-bottom: 2rem;
+  margin-bottom: 3.5rem;
   color: #2f3542;
+  justify-content: center;
 }
 
 .charts-grid {
-  display: flex;
+  display: flex; /* flex layout for horizontal centering */
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
+  justify-content: center; /* center items */
+  margin: 8rem;
+  gap: 0.5rem; /* smaller gap between cards */
 }
 
 .chart-box {
-  background: #f1f2f6;
+  background: #ffffff;
   border: 2px solid #a4b0be;
-  padding: 1.2rem 1.5rem;
-  border-radius: 10px;
-  width: 220px;
-  font-weight: 600;
   color: #333;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
   text-decoration: none;
+  width: 180px;
+  text-align: center;
   transition: all 0.3s ease;
 }
 
 .chart-box:hover {
-  background: #57606f;
+  background: #a4b0be;
   color: #fff;
-  border-color: #57606f;
 }
+
+/* Weekly charts now use the same styling as forum cards */
 .free-game-zone {
   background: #fefefe;
   padding: 3rem 1rem;
