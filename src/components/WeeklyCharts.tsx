@@ -13,13 +13,20 @@ const WeeklyCharts: React.FC = () => {
   return (
     <section className="weekly-charts">
       <div className="container">
-        <h2>📅 Weekly Charts</h2>
-        <div className="charts-grid">
-          {weeklyCharts.map((chart, index) => (
-            <Link key={index} to={chart.path} className="chart-box">
-              {chart.title}
-            </Link>
-          ))}
+        <div className="dpboss-style-section">
+          <div className="dpboss-header">WEEKLY CHARTS</div>
+          <div className="dpboss-content">
+            {weeklyCharts.map((chart, index) => (
+              <React.Fragment key={index}>
+                <Link to={chart.path} className="dpboss-list-item">
+                  {chart.title}
+                </Link>
+                {index < weeklyCharts.length - 1 && (
+                  <div className="dpboss-separator"></div>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
       </div>
     </section>

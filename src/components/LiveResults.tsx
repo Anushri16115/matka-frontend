@@ -15,23 +15,41 @@ const LiveResults: React.FC = () => {
   return (
     <section className="live-results">
       <div className="container">
-        <h1>📡 LIVE UPDATE</h1>
-        <p className="lucky-highlight">
-          🎯 Ank (शुभांक): <strong>2-4-7-9</strong>
-          <br />
-          🔸 Final Ank: <strong>K-3, M-6</strong>
-        </p>
-
-        <div className="results-grid">
-          {results.map((result, index) => (
-            <div key={index} className="result-card">
-              <h3>{result.game}</h3>
-              <p className="number">{result.number}</p>
-              <button className="btn btn-refresh" onClick={handleRefresh}>
-                🔄 Refresh
-              </button>
+        {/* Today Lucky Number Section - DPBoss Style */}
+        <div className="lucky-number-section">
+          <div className="lucky-number-header">TODAY LUCKY NUMBER</div>
+          <div className="lucky-number-box">
+            <div className="lucky-number-column">
+              <div className="lucky-label">Golden Ank</div>
+              <div className="lucky-value">2-4-7-9</div>
             </div>
-          ))}
+            <div className="lucky-number-column">
+              <div className="lucky-label">Final Ank</div>
+              <div className="lucky-value">K-3, M-6</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Live Update Section - DPBoss Style */}
+        <div className="live-update-section">
+          <div className="live-update-header">☔ LIVE UPDATE ☔</div>
+          <div className="live-results-list">
+            {results.map((result, index) => (
+              <div key={index} className="dpboss-result-row">
+                <div className="dpboss-result-content">
+                  <h4>{result.game}</h4>
+                  <p className="result">{result.number}</p>
+                </div>
+
+                {/* Optional refresh button on top-right */}
+                <div className="live-result-actions">
+                  <button className="btn btn-refresh" onClick={handleRefresh}>
+                    🔄 Refresh
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

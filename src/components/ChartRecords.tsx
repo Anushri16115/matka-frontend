@@ -12,13 +12,20 @@ const ChartRecords: React.FC = () => {
   return (
     <section className="chart-records">
       <div className="container">
-        <h2>📚 Chart Records</h2>
-        <div className="record-list">
-          {records.map((item, index) => (
-            <Link to={item.path} key={index} className="record-card">
-              {item.title}
-            </Link>
-          ))}
+        <div className="dpboss-style-section">
+          <div className="dpboss-header">CHART RECORDS</div>
+          <div className="dpboss-content">
+            {records.map((item, index) => (
+              <React.Fragment key={index}>
+                <Link to={item.path} className="dpboss-list-item">
+                  {item.title}
+                </Link>
+                {index < records.length - 1 && (
+                  <div className="dpboss-separator"></div>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
       </div>
     </section>

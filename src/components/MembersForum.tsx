@@ -12,20 +12,27 @@ const forumLinks = [
   {
     label: "Satta 220 Patti Favourite Panna Chart",
     path: "/satta-220-patti-chart",
-  }, // ✅ New Card
+  },
 ];
 
 const MembersForum: React.FC = () => {
   return (
     <section className="members-forum">
       <div className="container">
-        <h2>👥 Members Forum</h2>
-        <div className="forum-links-grid">
-          {forumLinks.map((item, index) => (
-            <Link key={index} to={item.path} className="forum-card">
-              {item.label}
-            </Link>
-          ))}
+        <div className="dpboss-style-section">
+          <div className="dpboss-header">MEMBERS FORUM</div>
+          <div className="dpboss-content">
+            {forumLinks.map((item, index) => (
+              <React.Fragment key={index}>
+                <Link to={item.path} className="dpboss-list-item">
+                  {item.label}
+                </Link>
+                {index < forumLinks.length - 1 && (
+                  <div className="dpboss-separator"></div>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
       </div>
     </section>
