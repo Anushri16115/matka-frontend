@@ -19,6 +19,7 @@ import OpenToCloseChart from "./pages/OpenToCloseChart";
 
 // Game Specific Charts
 import GameJodiChart from "./pages/GameJodiChart";
+import GamePanelChart from "./pages/GamePanelChart";
 
 // Member Forum Pages
 import GuessingForumPage from "./pages/GuessingForumPage";
@@ -66,7 +67,8 @@ function App() {
             />
 
             <Route path="*" element={<NotFound />} />
-          </Routes>
+            <Route path="/charts/panel/:gameId" element={<GamePanelChart />} />
+</Routes>
         </main>
 
         <Footer />

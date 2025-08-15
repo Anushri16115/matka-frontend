@@ -50,24 +50,6 @@ const Header: React.FC = () => {
                   About
                 </Link>
               </li>
-              <li className="mobile-auth-buttons">
-                <Link
-                  to="/login"
-                  className="btn btn-secondary"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Login
-                </Link>
-              </li>
-              <li className="mobile-auth-buttons">
-                <Link
-                  to="/register"
-                  className="btn btn-primary"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Register
-                </Link>
-              </li>
             </ul>
           </nav>
 
