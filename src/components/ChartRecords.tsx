@@ -3,9 +3,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const records = [
-  { title: "Satta Matka Jodi Chart Records", path: "/charts/jodi-records" },
-  { title: "Satta Matka Panel Chart Records", path: "/charts/panel-records" },
-  { title: "Other Matka Bazar Records", path: "/charts/bazar-records" },
+  { title: "Satta Matka Jodi Chart Records", path: "/satta-matka-jodi-chart-records" },
+  { title: "Satta Matka Panel Chart Records", path: "/satta-matka-panel-chart-records" },
+  { title: "Other Matka Bazar Jodi Records", path: "/other-matka-jodi-chart-records" },
+  { title: "Other Matka Bazar Panel Records", path: "/other-matka-panel-chart-records" },
 ];
 
 const ChartRecords: React.FC = () => {

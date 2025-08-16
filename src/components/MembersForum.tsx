@@ -7,7 +7,11 @@ const forumLinks = [
   { label: "Play Online", path: "/online-play" },
   { label: "Daily Numbers", path: "/daily-numbers" },
   { label: "Weekly Jodi / Panna", path: "/weekly-jodi-panna" },
-  { label: "Free Guessing", path: "/free-guessing" },
+  {
+    label: "Free Guessing",
+    path: "https://telegram.me/+KW4ELJaxi582ODBl",
+    external: true,
+  },
   { label: "Charts", path: "/charts" },
   {
     label: "Satta 220 Patti Favourite Panna Chart",
@@ -24,9 +28,20 @@ const MembersForum: React.FC = () => {
           <div className="dpboss-content">
             {forumLinks.map((item, index) => (
               <React.Fragment key={index}>
-                <Link to={item.path} className="dpboss-list-item">
-                  {item.label}
-                </Link>
+                {item.external ? (
+                  <a
+                    href={item.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="dpboss-list-item"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link to={item.path} className="dpboss-list-item">
+                    {item.label}
+                  </Link>
+                )}
                 {index < forumLinks.length - 1 && (
                   <div className="dpboss-separator"></div>
                 )}

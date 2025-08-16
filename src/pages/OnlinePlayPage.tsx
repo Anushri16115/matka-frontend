@@ -152,6 +152,109 @@ const OnlinePlayPage: React.FC = () => {
             ))}
           </div>
 
+          {/* Rate Section */}
+          <div className="rate-section">
+            <h3>Matka Play Rate</h3>
+            <div className="rate-list">
+              <div className="rate-item">SINGLE 10 KA 95</div>
+              <div className="rate-item">JODI 10 KA 950</div>
+              <div className="rate-item">SINGLE PATTI 10 KA 1400</div>
+              <div className="rate-item">DOUBLE PATTI 10 KA 2800</div>
+              <div className="rate-item">TRIPPLE PATTI 10 KA 7000</div>
+            </div>
+          </div>
+
+          {/* Chart Navigation Sections */}
+          <div className="chart-navigation">
+            <div className="chart-nav-header">Online Matka Play Jodi Charts</div>
+            <div className="chart-links">
+              <div className="chart-link-item">
+                <Link to="/charts/jodi/time-bazar">Time Bazar Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/jodi/kalyan">Kalyan Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/jodi/main-bazar">Main Bazar Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/jodi/sridevi">Sridevi Satta Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/jodi/kalyan-night">Kalyan Night Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/jodi/milan-day">Milan Day Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/jodi/milan-night">Milan Night Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/jodi/madhur-day">Madhur Day Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/jodi/madhur-night">Madhur Night Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/jodi/supreme-day">Supreme Day Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/jodi/supreme-night">Supreme Night Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/jodi/rajdhani-day">Rajdhani Day Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/jodi/rajdhani-night">Rajdhani Night Chart</Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="chart-navigation">
+            <div className="chart-nav-header">Online Matka Play Panel Charts</div>
+            <div className="chart-links">
+              <div className="chart-link-item">
+                <Link to="/charts/panel/time-bazar">Time Bazar Panel Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/panel/kalyan">Kalyan Panel Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/panel/main-bazar">Main Bazar Panel Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/panel/sridevi">Sridevi Panel Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/panel/kalyan-night">Kalyan Night Panel Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/panel/milan-day">Milan Day Panel Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/panel/milan-night">Milan Night Panel Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/panel/madhur-day">Madhur Day Panel Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/panel/madhur-night">Madhur Night Panel Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/panel/supreme-day">Supreme Day Panel Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/panel/supreme-night">Supreme Night Panel Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/panel/rajdhani-day">Rajdhani Day Panel Chart</Link>
+              </div>
+              <div className="chart-link-item">
+                <Link to="/charts/panel/rajdhani-night">Rajdhani Night Panel Chart</Link>
+              </div>
+            </div>
+          </div>
+
           {/* Footer Navigation */}
           <div className="play-footer">
             <div className="footer-nav">

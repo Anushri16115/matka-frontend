@@ -79,7 +79,7 @@ body {
 
 .nav-link {
   text-decoration: none;
-  color: white;
+  color: yellow;
   font-weight: 500;
   transition: color 0.3s ease;
 }
@@ -1793,6 +1793,2473 @@ table.panel-chart-table tr:hover {
 }
 
 
+/* === Universal Chart Page Styling === */
+/* Base chart page container */
+.chart-page-container {
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-sizing: border-box;
+  padding: 2rem 0;
+}
+
+/* Chart page header styling */
+.chart-page-header {
+  text-align: center;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.chart-page-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.chart-page-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+/* Chart content wrapper */
+.chart-content-wrapper {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  color: #333;
+}
+
+/* Chart table styling */
+.chart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.chart-table th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.chart-table td {
+  padding: 0.8rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  font-weight: 600;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.chart-table tr:hover td {
+  background-color: #f8f9fa;
+}
+
+.chart-table tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+/* Chart number cells */
+.chart-number-cell {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #333;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.6rem;
+  border-radius: 6px;
+  margin: 0.2rem;
+  display: inline-block;
+  min-width: 40px;
+  text-align: center;
+  border: 2px solid #667eea;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.chart-number-cell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Chart navigation controls */
+.chart-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.chart-control-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: 2px solid #ffd700;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.chart-control-btn:hover,
+.chart-control-btn.active {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4c93 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Chart period selector */
+.chart-period-selector {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.period-btn {
+  background: rgba(255, 255, 255, 0.9);
+  color: #667eea;
+  border: 2px solid #667eea;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.period-btn:hover,
+.period-btn.active {
+  background: #667eea;
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Chart statistics section */
+.chart-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid #ffd700;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-label {
+  color: #667eea;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  color: #333;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+/* Chart legend */
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid #333;
+}
+
+/* Mobile responsive for chart pages */
+@media (max-width: 768px) {
+  .chart-page-title {
+    font-size: 2rem;
+  }
+  
+  .chart-content-wrapper {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  .chart-table th,
+  .chart-table td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .chart-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .chart-control-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .chart-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-legend {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* === Guessing Forum Page Styling === */
+.forum-page {
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: #333;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Forum Header Banner */
+.forum-header {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 0;
+}
+
+.header-banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #f1c40f;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+.header-banner h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+.welcome-message {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.welcome-message p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  color: white;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.action-btn:hover {
+  background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Forum Rules Section */
+.forum-rules {
+  background: white;
+  padding: 2rem;
+  margin: 0;
+  border-bottom: 3px solid #3498db;
+}
+
+.forum-rules h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.forum-rules ol {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 2rem;
+}
+
+.forum-rules li {
+  margin: 0.8rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.forum-rules li:nth-child(1) { color: #e74c3c; }
+.forum-rules li:nth-child(2) { color: #e67e22; }
+.forum-rules li:nth-child(3) { color: #f39c12; }
+.forum-rules li:nth-child(4) { color: #27ae60; }
+.forum-rules li:nth-child(5) { color: #8e44ad; }
+.forum-rules li:nth-child(6) { color: #3498db; }
+
+/* Post Form Section */
+.post-form-section {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  padding: 2rem;
+  color: white;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-header label {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formatting-toolbar {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.format-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.format-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.post-form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post-textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.post-textarea:focus {
+  outline: none;
+  border-color: #f1c40f;
+  box-shadow: 0 0 10px rgba(241, 196, 15, 0.3);
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Forum Posts */
+.forum-posts {
+  background: #f8f9fa;
+  padding: 0;
+}
+
+.forum-post {
+  margin-bottom: 0;
+  border-bottom: 2px solid #dee2e6;
+  background: white;
+}
+
+.post-header {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  color: white;
+  padding: 0.8rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.username {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.timestamp {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.user-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+.top-guesser {
+  background: #f1c40f;
+  color: #2c3e50;
+  padding: 0.2rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.online-status {
+  color: #ecf0f1;
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+.post-content {
+  padding: 1.5rem 2rem;
+  background: #f8f9fa;
+}
+
+.content-box {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.asterisk {
+  color: #e74c3c;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0.2rem;
+}
+
+.post-text {
+  flex: 1;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.content-line {
+  margin: 0.3rem 0;
+  color: #2c3e50;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Mobile Responsive for Forum */
+@media (max-width: 768px) {
+  .forum-header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .header-banner h1 {
+    font-size: 2rem;
+  }
+  
+  .header-banner h2 {
+    font-size: 1.4rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .action-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .forum-rules {
+    padding: 1.5rem 1rem;
+  }
+  
+  .forum-rules ol {
+    padding-left: 1.5rem;
+  }
+  
+  .post-form-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .form-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .formatting-toolbar {
+    align-self: stretch;
+    justify-content: center;
+  }
+  
+  .post-header {
+    padding: 0.8rem 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .user-status {
+    align-items: center;
+  }
+  
+  .post-content {
+    padding: 1rem;
+  }
+  
+  .content-box {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .asterisk {
+    align-self: flex-start;
+  }
+}
+
+/* === Online Play Page Styling === */
+.online-play-page {
+  width: 100vw;
+  min-height: 100vh;
+  background: #f8f9fa;
+  color: #333;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Play Header Banner */
+.play-header {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 0;
+}
+
+.header-banner h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #f1c40f;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.separator-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #f1c40f, transparent);
+  margin: 1rem auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+.update-time {
+  margin: 1.5rem 0;
+}
+
+.update-time p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.update-time p:first-child {
+  color: #ecf0f1;
+  font-size: 1rem;
+}
+
+.update-time p:not(:first-child) {
+  color: #e74c3c;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Yellow Separator */
+.yellow-separator {
+  height: 8px;
+  background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Date Section */
+.date-section {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin: 0;
+}
+
+.date-section h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Game Sections */
+.game-sections {
+  background: white;
+  padding: 0;
+}
+
+.game-section {
+  border-bottom: 2px solid #dee2e6;
+  padding: 0;
+  margin: 0;
+}
+
+.game-section:nth-child(odd) {
+  background: #f8f9fa;
+}
+
+.game-section:nth-child(even) {
+  background: white;
+}
+
+/* Special highlighting for certain games */
+.game-section:nth-child(3) {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+}
+
+.game-title {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  color: white;
+  margin: 0;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.game-numbers {
+  padding: 1.5rem 2rem;
+}
+
+.number-line {
+  margin: 0.8rem 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.number-line.primary {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  font-size: 1.4rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.number-line.secondary {
+  background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.number-line.highlighted {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Play Footer */
+.play-footer {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-nav .nav-link {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.footer-nav .nav-link:hover {
+  background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer-info {
+  border-top: 2px solid #f1c40f;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.footer-info p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #ecf0f1;
+}
+
+.website-url {
+  color: #3498db !important;
+  font-weight: bold;
+}
+
+.owner-name, .reference-name {
+  color: #f1c40f;
+  font-weight: bold;
+}
+
+/* Chart Navigation Section */
+.chart-navigation {
+  background: white;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.chart-nav-header {
+  background: linear-gradient(135deg, #e91e63 0%, #ad1457 100%);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.chart-links {
+  padding: 0;
+}
+
+.chart-link-item {
+  border-bottom: 2px solid #e91e63;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.chart-link-item:hover {
+  background: #f8f9fa;
+  transform: translateX(5px);
+}
+
+.chart-link-item a {
+  display: block;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.chart-link-item:hover a {
+  color: #e91e63;
+}
+
+/* Rate Section */
+.rate-section {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.rate-section h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.rate-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rate-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+/* Mobile Responsive for Online Play */
+@media (max-width: 768px) {
+  .play-header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .header-banner h1 {
+    font-size: 1.5rem;
+  }
+  
+  .update-time p {
+    font-size: 1rem;
+  }
+  
+  .date-section h2 {
+    font-size: 1.3rem;
+  }
+  
+  .game-title {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .game-numbers {
+    padding: 1rem;
+  }
+  
+  .number-line {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .number-line.primary {
+    font-size: 1.2rem;
+  }
+  
+  .footer-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .footer-nav .nav-link {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .play-footer {
+    padding: 1.5rem 1rem;
+  }
+  
+  .chart-nav-header {
+    font-size: 1.1rem;
+  }
+  
+  .chart-link-item a {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .rate-section {
+    padding: 1rem;
+  }
+  
+  .rate-section h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* === Daily Numbers Page Styling === */
+.daily-numbers-page {
+  width: 100vw;
+  min-height: 100vh;
+  background: #f8f9fa;
+  color: #333;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Page Header */
+.page-header {
+  background: linear-gradient(135deg, #6a1b9a 0%, #4a148c 100%);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 0;
+  border: 3px dotted white;
+  margin: 10px;
+}
+
+.page-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #e1bee7;
+  font-weight: 500;
+}
+
+/* Filter Section */
+.filter-section {
+  background: linear-gradient(135deg, #ffc107 0%, #ff8f00 100%);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.date-selector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.date-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: #333;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.date-btn.active,
+.date-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.filter-select {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Daily Summary */
+.daily-summary {
+  background: white;
+  padding: 2rem;
+  margin: 0;
+  border-bottom: 3px solid #2196f3;
+}
+
+.daily-summary h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.summary-card {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid #2196f3;
+  transition: all 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card h4 {
+  color: #1976d2;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.summary-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0d47a1;
+  margin: 0.5rem 0;
+}
+
+.summary-desc {
+  color: #424242;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Game Results Sections */
+.results-section {
+  background: #fff3e0;
+  padding: 2rem;
+  margin: 0;
+}
+
+.results-section h3 {
+  color: #e65100;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.results-table-container {
+  overflow-x: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.results-table th {
+  background: linear-gradient(135deg, #ff5722 0%, #d84315 100%);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.results-table td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: 500;
+}
+
+.results-table tbody tr:nth-child(odd) {
+  background: #fafafa;
+}
+
+.results-table tbody tr:hover {
+  background: #fff3e0;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+.game-name {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.open-number, .close-number {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #1976d2;
+}
+
+.jodi-number {
+  font-weight: bold;
+  color: #7b1fa2;
+}
+
+.patti-digit {
+  background: #e8f5e8;
+  color: #2e7d32;
+  padding: 0.2rem 0.5rem;
+  margin: 0.1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.more-patti {
+  color: #666;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.total-number {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #d32f2f;
+}
+
+.status.completed {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.status.live {
+  color: #d32f2f;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+.status.upcoming {
+  color: #f57c00;
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Detailed Results */
+.detailed-results {
+  background: #f3e5f5;
+  padding: 2rem;
+  margin: 0;
+}
+
+.detailed-results h3 {
+  color: #6a1b9a;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.detailed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.result-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.result-header h4 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.status-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.status-badge.completed {
+  background: #c8e6c9;
+  color: #2e7d32;
+}
+
+.status-badge.live {
+  background: #ffcdd2;
+  color: #d32f2f;
+}
+
+.status-badge.upcoming {
+  background: #ffe0b2;
+  color: #f57c00;
+}
+
+.result-numbers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.number-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.number-group .label {
+  font-weight: bold;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.number-group .value {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.value.open, .value.close {
+  color: #1976d2;
+}
+
+.value.jodi {
+  color: #7b1fa2;
+}
+
+.value.total {
+  color: #d32f2f;
+}
+
+.patti-section h5 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.patti-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.patti-number {
+  background: #e8f5e8;
+  color: #2e7d32;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+/* Statistics Section */
+.statistics-section {
+  background: #e8f5e8;
+  padding: 2rem;
+  margin: 0;
+}
+
+.statistics-section h3 {
+  color: #2e7d32;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid #4caf50;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h4 {
+  color: #2e7d32;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1b5e20;
+  margin: 0.5rem 0;
+}
+
+.stat-desc {
+  color: #424242;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Next Results */
+.next-results {
+  background: #fff8e1;
+  padding: 2rem;
+  margin: 0;
+}
+
+.next-results h3 {
+  color: #f57c00;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.next-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.next-result-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid #ff9800;
+  transition: all 0.3s ease;
+}
+
+.next-result-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.next-result-card h4 {
+  color: #e65100;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.next-result-card .time {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #f57c00;
+  margin: 0.5rem 0;
+}
+
+.next-result-card .status {
+  color: #424242;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Mobile Responsive for Daily Numbers */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 1.5rem 1rem;
+    margin: 5px;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+  }
+  
+  .filter-section {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+  
+  .date-selector {
+    justify-content: center;
+  }
+  
+  .date-btn {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .summary-card {
+    padding: 1rem;
+  }
+  
+  .summary-number {
+    font-size: 1.5rem;
+  }
+  
+  .results-table {
+    font-size: 0.8rem;
+  }
+  
+  .results-table th,
+  .results-table td {
+    padding: 0.5rem;
+  }
+  
+  .detailed-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .result-numbers {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .next-results-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === Weekly Jodi/Panna Page Styling === */
+.weekly-jodi-panna {
+  width: 100vw;
+  min-height: 100vh;
+  background: #f8f9fa;
+  color: #333;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Weekly Header - scoped to weekly page only */
+.weekly-jodi-panna .weekly-header {
+  background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 0;
+  border: 2px solid #ff5722;
+}
+
+.weekly-jodi-panna .weekly-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.weekly-jodi-panna .weekly-header h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #ffeb3b;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 2px solid #ff5722;
+  padding: 0.5rem;
+  display: inline-block;
+}
+
+.weekly-jodi-panna .weekly-header p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #e3f2fd;
+  line-height: 1.5;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Top Numbers Section - scoped to weekly page only */
+.weekly-jodi-panna .top-numbers-section {
+  background: white;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.weekly-jodi-panna .numbers-row {
+  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+  padding: 1rem;
+  margin: 2px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  border: 1px solid #bdbdbd;
+  font-family: monospace;
+  letter-spacing: 2px;
+}
+
+.weekly-jodi-panna .numbers-row:nth-child(odd) {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+}
+
+/* Weekly Chart Section - scoped to weekly page only */
+.weekly-jodi-panna .weekly-chart-section {
+  background: white;
+  padding: 0;
+  margin: 0;
+}
+
+.weekly-jodi-panna .date-range {
+  background: linear-gradient(135deg, #ff8f00 0%, #e65100 100%);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.weekly-jodi-panna .chart-content {
+  background: #f8f9fa;
+  padding: 0;
+}
+
+.weekly-jodi-panna .chart-line {
+  background: white;
+  padding: 1rem 2rem;
+  margin: 1px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  border-left: 4px solid #2196f3;
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+.weekly-jodi-panna .chart-line:nth-child(odd) {
+  background: #f5f5f5;
+}
+
+.weekly-jodi-panna .chart-line:hover {
+  background: #e3f2fd;
+  transform: translateX(5px);
+  transition: all 0.3s ease;
+}
+
+/* Promotional Section - scoped to weekly page only */
+.weekly-jodi-panna .promotional-section {
+  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+  padding: 2rem;
+  margin: 0;
+  text-align: center;
+  border: 3px solid #f44336;
+}
+
+.weekly-jodi-panna .promo-header {
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  color: #ffeb3b;
+  padding: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.weekly-jodi-panna .promo-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.weekly-jodi-panna .hindi-ad {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 2px solid #ff5722;
+}
+
+.weekly-jodi-panna .price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #d32f2f;
+  margin: 1rem 0;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 3px solid #4caf50;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.weekly-jodi-panna .contact-info {
+  margin: 1.5rem 0;
+}
+
+.weekly-jodi-panna .contact-item {
+  background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: inline-block;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.weekly-jodi-panna .note {
+  color: #d32f2f;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Footer Section - scoped to weekly page only */
+.weekly-jodi-panna .footer-section {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+  padding: 2rem;
+  margin: 0;
+  text-align: center;
+  border-top: 3px solid #ff9800;
+}
+
+.weekly-jodi-panna .nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.weekly-jodi-panna .nav-link {
+  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.weekly-jodi-panna .nav-link:hover {
+  background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.weekly-jodi-panna .footer-info {
+  border-top: 2px solid #ff9800;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.weekly-jodi-panna .footer-info div {
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.weekly-jodi-panna .website-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e65100;
+}
+
+.weekly-jodi-panna .copyright {
+  color: #424242;
+  font-size: 0.9rem;
+}
+
+.weekly-jodi-panna .site-owner {
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.weekly-jodi-panna .owner-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+.weekly-jodi-panna .contact-number {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1976d2;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 0.5rem 0;
+}
+
+.weekly-jodi-panna .website-url {
+  color: #1976d2;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Mobile Responsive for Weekly Jodi/Panna - scoped to weekly page only */
+@media (max-width: 768px) {
+  .weekly-jodi-panna .weekly-header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .weekly-jodi-panna .weekly-header h1 {
+    font-size: 1.4rem;
+  }
+  
+  .weekly-jodi-panna .weekly-header h2 {
+    font-size: 1rem;
+  }
+  
+  .weekly-jodi-panna .numbers-row {
+    font-size: 1rem;
+    padding: 0.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .weekly-jodi-panna .chart-line {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .weekly-jodi-panna .promotional-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .weekly-jodi-panna .promo-header {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+  }
+  
+  .weekly-jodi-panna .hindi-ad {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  
+  .weekly-jodi-panna .price {
+    font-size: 1.5rem;
+  }
+  
+  .weekly-jodi-panna .contact-item {
+    display: block;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+  
+  .weekly-jodi-panna .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .weekly-jodi-panna .nav-link {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .weekly-jodi-panna .footer-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .weekly-jodi-panna .contact-number {
+    font-size: 1.1rem;
+  }
+}
+
+/* === Weekly Jodi/Panna Member Forum Page Styling === */
+.weekly-member-forum {
+  width: 100vw;
+  min-height: 100vh;
+  background: #f8f9fa;
+  color: #333;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Member Forum Header - scoped to member forum page only */
+.weekly-member-forum .member-forum-header {
+  background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 0;
+  border: 2px solid #ff5722;
+}
+
+.weekly-member-forum .member-forum-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.weekly-member-forum .member-forum-header h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #ffeb3b;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 2px solid #ff5722;
+  padding: 0.5rem;
+  display: inline-block;
+}
+
+.weekly-member-forum .member-forum-header p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #e3f2fd;
+  line-height: 1.5;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Chart Sections - scoped to member forum page only */
+.weekly-member-forum .chart-section {
+  background: white;
+  padding: 0;
+  margin: 0;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.weekly-member-forum .chart-header {
+  background: linear-gradient(135deg, #ff8f00 0%, #e65100 100%);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.weekly-member-forum .chart-data {
+  background: #f8f9fa;
+  padding: 0;
+}
+
+.weekly-member-forum .data-line {
+  background: white;
+  padding: 1rem 2rem;
+  margin: 1px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  border-left: 4px solid #2196f3;
+  font-family: monospace;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.weekly-member-forum .data-line:nth-child(odd) {
+  background: #f5f5f5;
+}
+
+.weekly-member-forum .data-line:hover {
+  background: #e3f2fd;
+  transform: translateX(5px);
+  transition: all 0.3s ease;
+}
+
+/* Jodi Data Specific Styling */
+.weekly-member-forum .jodi-data .jodi-line {
+  font-size: 1.2rem;
+  color: #7b1fa2;
+  border-left: 4px solid #9c27b0;
+}
+
+/* Open Close Data Specific Styling */
+.weekly-member-forum .open-close-data .open-close-line {
+  font-size: 1.1rem;
+  color: #d32f2f;
+  border-left: 4px solid #f44336;
+}
+
+/* Member Promotional Section - scoped to member forum page only */
+.weekly-member-forum .member-promo-section {
+  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+  padding: 2rem;
+  margin: 0;
+  text-align: center;
+  border: 3px solid #f44336;
+}
+
+.weekly-member-forum .promo-header {
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  color: #ffeb3b;
+  padding: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.weekly-member-forum .promo-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.weekly-member-forum .hindi-ad {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 2px solid #ff5722;
+}
+
+.weekly-member-forum .price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #d32f2f;
+  margin: 1rem 0;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 3px solid #4caf50;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.weekly-member-forum .contact-info {
+  margin: 1.5rem 0;
+}
+
+.weekly-member-forum .contact-item {
+  background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: inline-block;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.weekly-member-forum .note {
+  color: #d32f2f;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Member Footer Section - scoped to member forum page only */
+.weekly-member-forum .member-footer {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+  padding: 2rem;
+  margin: 0;
+  text-align: center;
+  border-top: 3px solid #ff9800;
+}
+
+.weekly-member-forum .nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.weekly-member-forum .nav-link {
+  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+  color: white;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.weekly-member-forum .nav-link:hover {
+  background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.weekly-member-forum .footer-info {
+  border-top: 2px solid #ff9800;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.weekly-member-forum .footer-info div {
+  margin: 0.3rem 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.weekly-member-forum .website-url {
+  color: #1976d2;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.weekly-member-forum .copyright {
+  color: #424242;
+  font-size: 0.8rem;
+}
+
+.weekly-member-forum .site-owner {
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.weekly-member-forum .owner-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+.weekly-member-forum .contact-number {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1976d2;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 0.5rem 0;
+}
+
+/* Mobile Responsive for Weekly Member Forum - scoped to member forum page only */
+@media (max-width: 768px) {
+  .weekly-member-forum .member-forum-header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .weekly-member-forum .member-forum-header h1 {
+    font-size: 1.4rem;
+  }
+  
+  .weekly-member-forum .member-forum-header h2 {
+    font-size: 1rem;
+  }
+  
+  .weekly-member-forum .chart-header {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+  
+  .weekly-member-forum .data-line {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .weekly-member-forum .member-promo-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .weekly-member-forum .promo-header {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+  }
+  
+  .weekly-member-forum .hindi-ad {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  
+  .weekly-member-forum .price {
+    font-size: 1.5rem;
+  }
+  
+  .weekly-member-forum .contact-item {
+    display: block;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+  
+  .weekly-member-forum .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .weekly-member-forum .nav-link {
+    width: 100%;
+    max-width: 200px;
+    font-size: 0.7rem;
+  }
+  
+  .weekly-member-forum .member-footer {
+    padding: 1.5rem 1rem;
+  }
+  
+  .weekly-member-forum .contact-number {
+    font-size: 1.1rem;
+  }
+}
+
+/* === Charts Member Forum Page Styling === */
+.charts-member-forum {
+  width: 100vw;
+  min-height: 100vh;
+  background: #f8f9fa;
+  color: #333;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Charts Header - scoped to charts member forum page only */
+.charts-member-forum .charts-header {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+  color: #333;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 0;
+  border-bottom: 3px solid #ff9800;
+}
+
+.charts-member-forum .charts-header h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.charts-member-forum .charts-header p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #424242;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto 1rem auto;
+}
+
+.charts-member-forum .admin-update {
+  font-size: 0.9rem;
+  color: #d32f2f;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Chart Category Sections - scoped to charts member forum page only */
+.charts-member-forum .chart-category {
+  background: white;
+  margin: 0;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.charts-member-forum .category-header {
+  background: linear-gradient(135deg, #7b1fa2 0%, #4a148c 100%);
+  color: #ffeb3b;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.charts-member-forum .chart-list {
+  background: #f8f9fa;
+  padding: 0;
+}
+
+.charts-member-forum .chart-item {
+  display: block;
+  background: white;
+  padding: 1rem 2rem;
+  margin: 1px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-left: 4px solid #2196f3;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.charts-member-forum .chart-item:nth-child(odd) {
+  background: #f5f5f5;
+}
+
+.charts-member-forum .chart-item:hover {
+  background: #e3f2fd;
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Color-coded chart items */
+.charts-member-forum .chart-item.blue {
+  color: #1976d2;
+  border-left-color: #2196f3;
+}
+
+.charts-member-forum .chart-item.red {
+  color: #d32f2f;
+  border-left-color: #f44336;
+}
+
+.charts-member-forum .chart-item.black {
+  color: #424242;
+  border-left-color: #616161;
+}
+
+.charts-member-forum .chart-item.orange {
+  color: #e65100;
+  border-left-color: #ff9800;
+}
+
+/* Charts Footer Section - scoped to charts member forum page only */
+.charts-member-forum .charts-footer {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+  padding: 2rem;
+  margin: 0;
+  text-align: center;
+  border-top: 3px solid #ff9800;
+}
+
+.charts-member-forum .nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.charts-member-forum .nav-link {
+  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+  color: white;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.charts-member-forum .nav-link:hover {
+  background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.charts-member-forum .footer-info {
+  border-top: 2px solid #ff9800;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.charts-member-forum .footer-info div {
+  margin: 0.3rem 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.charts-member-forum .website-url {
+  color: #1976d2;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.charts-member-forum .copyright {
+  color: #424242;
+  font-size: 0.8rem;
+}
+
+.charts-member-forum .site-owner {
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.charts-member-forum .owner-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+/* Mobile Responsive for Charts Member Forum - scoped to charts member forum page only */
+@media (max-width: 768px) {
+  .charts-member-forum .charts-header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .charts-member-forum .charts-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .charts-member-forum .charts-header p {
+    font-size: 0.9rem;
+  }
+  
+  .charts-member-forum .category-header {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+  
+  .charts-member-forum .chart-item {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .charts-member-forum .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .charts-member-forum .nav-link {
+    width: 100%;
+    max-width: 200px;
+    font-size: 0.7rem;
+  }
+  
+  .charts-member-forum .charts-footer {
+    padding: 1.5rem 1rem;
+  }
+}
+
 /* === Mobile Hamburger Menu Styles === */
 /* Mobile menu button hidden on desktop */
 .mobile-menu-btn {
@@ -1846,5 +4313,568 @@ table.panel-chart-table tr:hover {
     color: black;
     text-decoration: none;
     font-size: 1.2rem;
+  }
+
+  /* Hide auth buttons on mobile */
+  .auth-buttons {
+    display: none;
+  }
+}
+/* ===== Charts Page Styling ===== */
+.charts-member-forum {
+  background: #fff;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.charts-header h1 {
+  background: black;
+  color: yellow;
+  padding: 10px;
+  border: 2px solid purple;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.charts-header p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.admin-update {
+  color: red;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.chart-category {
+  margin: 20px 0;
+}
+
+.category-header {
+  background: black;
+  color: yellow;
+  padding: 8px;
+  border: 2px solid purple;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.chart-list {
+  border: 2px solid red;
+}
+
+.chart-item {
+  display: block;
+  text-align: center;
+  padding: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  border-bottom: 2px solid red;
+  text-decoration: none;
+}
+
+.chart-item:last-child {
+  border-bottom: none;
+}
+
+/* Chart color coding */
+.chart-item.blue { color: blue; }
+.chart-item.red { color: red; }
+.chart-item.black { color: black; }
+.chart-item.orange { color: orange; }
+
+/* Footer of charts page */
+.charts-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.charts-footer .nav-links {
+  margin-bottom: 10px;
+}
+
+.nav-link {
+  margin: 0 6px;
+  color: purple;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.footer-info {
+  font-size: 13px;
+  color: #444;
+}
+
+/* === Satta 220 Patti Chart Page Styling === */
+.satta-220-patti-chart {
+  width: 100vw;
+  min-height: 100vh;
+  background: #fff;
+  color: #333;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Patti Header - scoped to satta 220 patti chart page only */
+.satta-220-patti-chart .patti-header {
+  background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-bottom: 0;
+  border: 3px solid #ff5722;
+}
+
+.satta-220-patti-chart .patti-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.satta-220-patti-chart .sub-header {
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+  color: white;
+  padding: 1rem;
+  margin: 1rem 0 0 0;
+  border: 2px solid #ff5722;
+}
+
+.satta-220-patti-chart .sub-header h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ffeb3b;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.satta-220-patti-chart .sub-header p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #e3f2fd;
+  line-height: 1.4;
+}
+
+/* Panna Record Section - scoped to satta 220 patti chart page only */
+.satta-220-patti-chart .panna-record-section {
+  background: white;
+  margin: 0;
+}
+
+.satta-220-patti-chart .section-header {
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  color: #ffeb3b;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.satta-220-patti-chart .panna-record-item {
+  display: flex;
+  align-items: flex-start;
+  background: white;
+  padding: 0;
+  margin: 0;
+  border-bottom: 2px solid #000;
+}
+
+.satta-220-patti-chart .number-circle {
+  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+.satta-220-patti-chart .panna-numbers {
+  flex: 1;
+  padding: 1rem;
+  background: #f8f9fa;
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.satta-220-patti-chart .panna-number {
+  margin-right: 8px;
+  color: #1976d2;
+}
+
+/* Hot Panna Section - scoped to satta 220 patti chart page only */
+.satta-220-patti-chart .hot-panna-section {
+  background: white;
+  margin: 0;
+}
+
+.satta-220-patti-chart .section-header.hot {
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  color: #ffeb3b;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.satta-220-patti-chart .hot-panna-content {
+  background: #f8f9fa;
+  padding: 1rem;
+}
+
+.satta-220-patti-chart .hot-panna-line {
+  background: white;
+  padding: 0.8rem 1rem;
+  margin: 2px 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #2c3e50;
+  border-left: 4px solid #ff9800;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.satta-220-patti-chart .hot-panna-line:nth-child(odd) {
+  background: #f5f5f5;
+}
+
+/* Patti Footer Section - scoped to satta 220 patti chart page only */
+.satta-220-patti-chart .patti-footer {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+  padding: 2rem;
+  margin: 0;
+  text-align: center;
+  border-top: 3px solid #ff9800;
+}
+
+.satta-220-patti-chart .nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.satta-220-patti-chart .nav-link {
+  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+  color: white;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.satta-220-patti-chart .nav-link:hover {
+  background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.satta-220-patti-chart .footer-info {
+  border-top: 2px solid #ff9800;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.satta-220-patti-chart .footer-info div {
+  margin: 0.3rem 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.satta-220-patti-chart .website-url {
+  color: #1976d2;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.satta-220-patti-chart .copyright {
+  color: #424242;
+  font-size: 0.8rem;
+}
+
+.satta-220-patti-chart .site-owner {
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.satta-220-patti-chart .owner-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+.satta-220-patti-chart .contact-number {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1976d2;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 0.5rem 0;
+}
+
+/* Mobile Responsive for Satta 220 Patti Chart - scoped to satta 220 patti chart page only */
+@media (max-width: 768px) {
+  .satta-220-patti-chart .patti-header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .satta-220-patti-chart .patti-header h1 {
+    font-size: 1.4rem;
+  }
+  
+  .satta-220-patti-chart .sub-header h2 {
+    font-size: 1rem;
+  }
+  
+  .satta-220-patti-chart .sub-header p {
+    font-size: 0.8rem;
+  }
+  
+  .satta-220-patti-chart .section-header {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+  
+  .satta-220-patti-chart .number-circle {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    margin: 8px;
+  }
+  
+  .satta-220-patti-chart .panna-numbers {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .satta-220-patti-chart .hot-panna-line {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .satta-220-patti-chart .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .satta-220-patti-chart .nav-link {
+    width: 100%;
+    max-width: 200px;
+    font-size: 0.7rem;
+  }
+  
+  .satta-220-patti-chart .patti-footer {
+    padding: 1.5rem 1rem;
+  }
+  
+  .satta-220-patti-chart .contact-number {
+    font-size: 1.1rem;
+  }
+}
+
+/* === Chart Records Pages Styling === */
+.chart-records-page {
+  width: 100vw;
+  min-height: 100vh;
+  background: #fff;
+  color: #333;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Chart Records Header - scoped to chart records pages only */
+.chart-records-page .chart-records-header {
+  background: linear-gradient(135deg, #7b1fa2 0%, #4a148c 100%);
+  color: #ffeb3b;
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 0;
+  border: 2px solid #e91e63;
+}
+
+.chart-records-page .chart-records-header h1 {
+  font-size: 1.3rem;
+  margin: 0;
+  color: #ffeb3b;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Chart Records List - scoped to chart records pages only */
+.chart-records-page .chart-records-list {
+  background: white;
+  margin: 0;
+}
+
+.chart-records-page .chart-record-item {
+  display: block;
+  background: white;
+  padding: 1rem 2rem;
+  margin: 1px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid #d32f2f;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.chart-records-page .chart-record-item:hover {
+  background: #f5f5f5;
+  transform: translateX(3px);
+}
+
+/* Color-coded chart record items */
+.chart-records-page .chart-record-item.blue {
+  color: #1976d2;
+}
+
+.chart-records-page .chart-record-item.red {
+  color: #d32f2f;
+}
+
+.chart-records-page .chart-record-item.black {
+  color: #424242;
+}
+
+.chart-records-page .chart-record-item.orange {
+  color: #e65100;
+}
+
+/* Matka Play Section - scoped to chart records pages only */
+.chart-records-page .matka-play-section {
+  background: #000;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chart-records-page .matka-play-btn {
+  background: #1976d2;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-radius: 3px;
+}
+
+.chart-records-page .refresh-btn {
+  background: #d32f2f;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-radius: 3px;
+}
+
+/* Chart Records Footer - scoped to chart records pages only */
+.chart-records-page .chart-records-footer {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #424242;
+  line-height: 1.6;
+}
+
+.chart-records-page .chart-records-footer p {
+  margin: 0.5rem 0;
+}
+
+/* Different color schemes for different chart record pages */
+.chart-records-page.jodi .chart-records-header {
+  background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%);
+  color: white;
+  border-color: #ff5722;
+}
+
+.chart-records-page.panel .chart-records-header {
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  color: #ffeb3b;
+  border-color: #4caf50;
+}
+
+.chart-records-page.other-jodi .chart-records-header {
+  background: linear-gradient(135deg, #ff9800 0%, #e65100 100%);
+  color: white;
+  border-color: #9c27b0;
+}
+
+.chart-records-page.other-panel .chart-records-header {
+  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+  color: white;
+  border-color: #ff5722;
+}
+
+/* Mobile Responsive for Chart Records Pages */
+@media (max-width: 768px) {
+  .chart-records-page .chart-records-header h1 {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+  }
+  
+  .chart-records-page .chart-record-item {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .chart-records-page .matka-play-section {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .chart-records-page .matka-play-btn,
+  .chart-records-page .refresh-btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .chart-records-page .chart-records-footer {
+    padding: 1rem;
+    font-size: 0.8rem;
   }
 }

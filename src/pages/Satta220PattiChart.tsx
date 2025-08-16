@@ -1,356 +1,135 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-interface Patti220Data {
-  id: string;
-  patti: string;
-  frequency: number;
-  lastAppeared: string;
-  nextPrediction: string;
-  confidence: number;
-  status: "hot" | "warm" | "cold";
-}
-
 const Satta220PattiChart: React.FC = () => {
-  const [selectedFilter, setSelectedFilter] = useState("all");
-  const [sortBy, setSortBy] = useState("frequency");
-
-  // Mock data for 220 patti chart
-  const patti220Data: Patti220Data[] = [
+  // All Panna Record Chart Data based on reference images
+  const pannaRecordData = [
     {
-      id: "1",
-      patti: "123",
-      frequency: 45,
-      lastAppeared: "2024-01-14",
-      nextPrediction: "2024-01-16",
-      confidence: 85,
-      status: "hot",
+      number: 1,
+      pannas: ["137", "128", "146", "236", "245", "290", "380", "470", "489", "560", "678", "579", "119", "155", "227", "335", "344", "399", "568", "669", "777", "100"]
     },
     {
-      id: "2",
-      patti: "234",
-      frequency: 38,
-      lastAppeared: "2024-01-13",
-      nextPrediction: "2024-01-17",
-      confidence: 78,
-      status: "hot",
+      number: 2,
+      pannas: ["129", "138", "147", "156", "237", "246", "345", "390", "480", "570", "679", "588", "110", "228", "255", "336", "499", "660", "688", "778", "200", "444"]
     },
     {
-      id: "3",
-      patti: "345",
-      frequency: 32,
-      lastAppeared: "2024-01-12",
-      nextPrediction: "2024-01-18",
-      confidence: 72,
-      status: "warm",
+      number: 3,
+      pannas: ["120", "139", "148", "157", "238", "247", "256", "346", "490", "580", "670", "689", "166", "229", "337", "355", "445", "599", "779", "788", "300", "111"]
     },
     {
-      id: "4",
-      patti: "456",
-      frequency: 28,
-      lastAppeared: "2024-01-11",
-      nextPrediction: "2024-01-19",
-      confidence: 68,
-      status: "warm",
+      number: 4,
+      pannas: ["130", "149", "158", "167", "239", "248", "257", "347", "356", "590", "680", "789", "112", "220", "266", "338", "446", "455", "699", "770", "400", "888"]
     },
     {
-      id: "5",
-      patti: "567",
-      frequency: 25,
-      lastAppeared: "2024-01-10",
-      nextPrediction: "2024-01-20",
-      confidence: 65,
-      status: "warm",
+      number: 5,
+      pannas: ["140", "159", "168", "230", "249", "258", "267", "348", "357", "456", "690", "780", "113", "122", "177", "339", "366", "447", "799", "889", "500", "555"]
     },
     {
-      id: "6",
-      patti: "678",
-      frequency: 22,
-      lastAppeared: "2024-01-09",
-      nextPrediction: "2024-01-21",
-      confidence: 62,
-      status: "cold",
+      number: 6,
+      pannas: ["124", "160", "179", "250", "269", "278", "340", "359", "368", "458", "467", "890", "115", "133", "188", "223", "377", "449", "557", "566", "700", "999"]
     },
     {
-      id: "7",
-      patti: "789",
-      frequency: 20,
-      lastAppeared: "2024-01-08",
-      nextPrediction: "2024-01-22",
-      confidence: 58,
-      status: "cold",
+      number: 7,
+      pannas: ["124", "160", "179", "250", "269", "278", "340", "359", "368", "458", "467", "890", "115", "133", "188", "223", "377", "449", "557", "566", "700", "999"]
     },
     {
-      id: "8",
-      patti: "890",
-      frequency: 18,
-      lastAppeared: "2024-01-07",
-      nextPrediction: "2024-01-23",
-      confidence: 55,
-      status: "cold",
+      number: 8,
+      pannas: ["125", "134", "170", "189", "260", "279", "350", "369", "378", "459", "468", "567", "116", "224", "233", "288", "440", "477", "558", "990", "800", "666"]
     },
+    {
+      number: 9,
+      pannas: ["126", "135", "180", "234", "270", "289", "360", "379", "450", "469", "478", "568", "117", "144", "199", "225", "388", "559", "577", "667", "900", "333"]
+    },
+    {
+      number: 0,
+      pannas: ["127", "136", "145", "190", "235", "280", "370", "389", "460", "479", "569", "578", "000", "118", "226", "244", "299", "335", "677", "899", "000", "222"]
+    }
   ];
 
-  const filteredData = patti220Data
-    .filter((item) => {
-      if (selectedFilter === "all") return true;
-      return item.status === selectedFilter;
-    })
-    .sort((a, b) => {
-      if (sortBy === "frequency") return b.frequency - a.frequency;
-      if (sortBy === "confidence") return b.confidence - a.confidence;
-      return (
-        new Date(a.lastAppeared).getTime() - new Date(b.lastAppeared).getTime()
-      );
-    });
+  // Hot Panna (Patti) Data
+  const hotPannaData = [
+    "100-[[ 1 ]]-777",
+    "128-137-146-236-245-290-338-470-489-560-678-579-119-155-227-350-448-466-536-880-899",
+    "200-[[ 2 ]]-444",
+    "129-138-147-156-237-246-345-390-480-570-679-588-110-228-255-336-499-660-688-778",
+    "300-[[ 3 ]]-111",
+    "120-139-148-157-238-247-256-346-490-580-670-689-166-229-337-355-445-599-779-788",
+    "400-[[ 4 ]]-888",
+    "130-149-158-167-239-248-257-347-356-590-680-789-112-220-266-338-446-455-699-770",
+    "500-[[ 5 ]]-555",
+    "140-159-168-230-249-258-267-348-357-456-690-780-113-122-177-339-366-447-799-889",
+    "600-[[ 6 ]]-222",
+    "123-150-169-178-240-259-268-349-358-457-367-790-114-277-330-448-466-556-880-899",
+    "700-[[ 7 ]]-999",
+    "124-160-179-250-269-278-340-359-368-458-467-890-115-133-188-223-377-449-557-566",
+    "800-[[ 8 ]]-666",
+    "125-134-170-189-260-279-350-369-378-459-468-567-116-224-233-288-440-477-558-990",
+    "900-[[ 9 ]]-333",
+    "126-135-180-234-270-289-360-379-450-469-478-568-117-144-199-225-388-559-577-667"
+  ];
 
   return (
-    <div className="satta-220-patti-page">
+    <div className="satta-220-patti-chart">
       <div className="container">
-        <div className="page-header">
-          <h1 className="page-title">🎲 Satta 220 Patti Chart</h1>
-          <p className="page-subtitle">
-            Complete 220 patti analysis with predictions and trends
-          </p>
-        </div>
-
-        {/* Chart Overview */}
-        <div className="chart-overview">
-          <h3>📊 220 Patti Overview</h3>
-          <div className="overview-grid">
-            <div className="overview-card">
-              <h4>Total Pattis</h4>
-              <p className="overview-number">220</p>
-              <p className="overview-desc">Available pattis</p>
-            </div>
-            <div className="overview-card">
-              <h4>Hot Pattis</h4>
-              <p className="overview-number">15</p>
-              <p className="overview-desc">High frequency</p>
-            </div>
-            <div className="overview-card">
-              <h4>Warm Pattis</h4>
-              <p className="overview-number">45</p>
-              <p className="overview-desc">Medium frequency</p>
-            </div>
-            <div className="overview-card">
-              <h4>Cold Pattis</h4>
-              <p className="overview-number">160</p>
-              <p className="overview-desc">Low frequency</p>
-            </div>
+        {/* Header Section */}
+        <div className="patti-header">
+          <h1>ALL PANNA RECORD CHART</h1>
+          <div className="sub-header">
+            <h2>SATTA MATKA WEEKLY PATTI CHART</h2>
+            <p>matka 220 patti, matka 220 patti chart, matka satta bazar 220 patti, 220 patti guessing, matka patti formula, 220 patti matka satta bazar com</p>
           </div>
         </div>
 
-        {/* Filters */}
-        <div className="filter-section">
-          <div className="filter-controls">
-            <div className="filter-group">
-              <label>Filter by Status:</label>
-              <select
-                value={selectedFilter}
-                onChange={(e) => setSelectedFilter(e.target.value)}
-                className="filter-select"
-              >
-                <option value="all">All Pattis</option>
-                <option value="hot">Hot Pattis</option>
-                <option value="warm">Warm Pattis</option>
-                <option value="cold">Cold Pattis</option>
-              </select>
-            </div>
-            <div className="filter-group">
-              <label>Sort by:</label>
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="filter-select"
-              >
-                <option value="frequency">Frequency</option>
-                <option value="confidence">Confidence</option>
-                <option value="lastAppeared">Last Appeared</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        {/* Patti Chart Table */}
-        <div className="patti-chart-section">
-          <h3>📋 220 Patti Chart</h3>
-          <div className="chart-table-container">
-            <table className="patti-chart-table">
-              <thead>
-                <tr>
-                  <th>Patti</th>
-                  <th>Frequency</th>
-                  <th>Last Appeared</th>
-                  <th>Next Prediction</th>
-                  <th>Confidence</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredData.map((patti) => (
-                  <tr key={patti.id}>
-                    <td className="patti-number">{patti.patti}</td>
-                    <td className="frequency">{patti.frequency}</td>
-                    <td className="last-appeared">
-                      {new Date(patti.lastAppeared).toLocaleDateString()}
-                    </td>
-                    <td className="next-prediction">
-                      {new Date(patti.nextPrediction).toLocaleDateString()}
-                    </td>
-                    <td className="confidence">{patti.confidence}%</td>
-                    <td className={`status ${patti.status}`}>
-                      {patti.status === "hot"
-                        ? "🔥 Hot"
-                        : patti.status === "warm"
-                        ? "🌡️ Warm"
-                        : "❄️ Cold"}
-                    </td>
-                  </tr>
+        {/* All Panna Record Section */}
+        <div className="panna-record-section">
+          <div className="section-header">ALL PANNA RECORD</div>
+          
+          {pannaRecordData.map((record, index) => (
+            <div key={index} className="panna-record-item">
+              <div className="number-circle">{record.number}</div>
+              <div className="panna-numbers">
+                {record.pannas.map((panna, pannaIndex) => (
+                  <span key={pannaIndex} className="panna-number">
+                    {panna}
+                    {pannaIndex < record.pannas.length - 1 ? " " : ""}
+                  </span>
                 ))}
-              </tbody>
-            </table>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Hot Panna Section */}
+        <div className="hot-panna-section">
+          <div className="section-header hot">ALL HOT PANNA (PATTI)</div>
+          <div className="hot-panna-content">
+            {hotPannaData.map((line, index) => (
+              <div key={index} className="hot-panna-line">
+                {line}
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Top Pattis */}
-        <div className="top-pattis">
-          <h3>🏆 Top Performing Pattis</h3>
-          <div className="top-pattis-grid">
-            <div className="top-patti-card">
-              <div className="rank">1</div>
-              <div className="patti-info">
-                <h4>Patti 123</h4>
-                <p>Frequency: 45 times</p>
-                <p>Confidence: 85%</p>
-                <span className="status-hot">🔥 Hot</span>
-              </div>
-            </div>
-            <div className="top-patti-card">
-              <div className="rank">2</div>
-              <div className="patti-info">
-                <h4>Patti 234</h4>
-                <p>Frequency: 38 times</p>
-                <p>Confidence: 78%</p>
-                <span className="status-hot">🔥 Hot</span>
-              </div>
-            </div>
-            <div className="top-patti-card">
-              <div className="rank">3</div>
-              <div className="patti-info">
-                <h4>Patti 345</h4>
-                <p>Frequency: 32 times</p>
-                <p>Confidence: 72%</p>
-                <span className="status-warm">🌡️ Warm</span>
-              </div>
-            </div>
+        {/* Footer Navigation */}
+        <div className="patti-footer">
+          <div className="nav-links">
+            <Link to="/" className="nav-link">Home</Link>
+            <Link to="/forum" className="nav-link">Matka Guessing</Link>
+            <Link to="/charts" className="nav-link">Matka Chart</Link>
+            <Link to="/online-play" className="nav-link">Matka Play</Link>
+            <Link to="/weekly-jodi-panna" className="nav-link">Tara Matka</Link>
+            <Link to="/indian-matka" className="nav-link">Indian Matka</Link>
+            <Link to="/fix-matka" className="nav-link">Fix Matka</Link>
+            <Link to="/sitemap" className="nav-link">Sitemap</Link>
           </div>
-        </div>
-
-        {/* Patti Analysis */}
-        <div className="patti-analysis">
-          <h3>🔍 Patti Analysis</h3>
-          <div className="analysis-grid">
-            <div className="analysis-card">
-              <h4>Most Common Pattern</h4>
-              <p className="analysis-pattern">123</p>
-              <p className="analysis-desc">Appeared 45 times</p>
-            </div>
-            <div className="analysis-card">
-              <h4>Average Frequency</h4>
-              <p className="analysis-number">28.5</p>
-              <p className="analysis-desc">Per patti</p>
-            </div>
-            <div className="analysis-card">
-              <h4>Success Rate</h4>
-              <p className="analysis-rate">73%</p>
-              <p className="analysis-desc">Prediction accuracy</p>
-            </div>
-            <div className="analysis-card">
-              <h4>Next Hot Patti</h4>
-              <p className="analysis-prediction">456</p>
-              <p className="analysis-desc">Expected soon</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Patti Categories */}
-        <div className="patti-categories">
-          <h3>📂 Patti Categories</h3>
-          <div className="categories-grid">
-            <div className="category-card hot">
-              <h4>🔥 Hot Pattis (15)</h4>
-              <p>High frequency pattis with strong prediction confidence</p>
-              <div className="category-examples">
-                <span>123</span>
-                <span>234</span>
-                <span>345</span>
-                <span>456</span>
-                <span>567</span>
-              </div>
-            </div>
-            <div className="category-card warm">
-              <h4>🌡️ Warm Pattis (45)</h4>
-              <p>Medium frequency pattis with moderate confidence</p>
-              <div className="category-examples">
-                <span>678</span>
-                <span>789</span>
-                <span>890</span>
-                <span>901</span>
-                <span>012</span>
-              </div>
-            </div>
-            <div className="category-card cold">
-              <h4>❄️ Cold Pattis (160)</h4>
-              <p>Low frequency pattis with lower prediction confidence</p>
-              <div className="category-examples">
-                <span>111</span>
-                <span>222</span>
-                <span>333</span>
-                <span>444</span>
-                <span>555</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Prediction Tools */}
-        <div className="prediction-tools">
-          <h3>🎯 Patti Prediction Tools</h3>
-          <div className="tools-grid">
-            <div className="tool-card">
-              <h4>Patti Calculator</h4>
-              <p>Calculate patti based on open and close numbers</p>
-              <button className="btn btn-primary">Use Calculator</button>
-            </div>
-            <div className="tool-card">
-              <h4>Pattern Analyzer</h4>
-              <p>Analyze patti patterns for better predictions</p>
-              <button className="btn btn-primary">Analyze</button>
-            </div>
-            <div className="tool-card">
-              <h4>Frequency Tracker</h4>
-              <p>Track patti frequency over time</p>
-              <button className="btn btn-primary">Track</button>
-            </div>
-          </div>
-        </div>
-
-        {/* Navigation */}
-        <div className="page-navigation">
-          <div className="nav-buttons">
-            <Link to="/" className="btn btn-secondary">
-              ← Back to Home
-            </Link>
-            <Link to="/charts" className="btn btn-primary">
-              All Charts →
-            </Link>
-            <Link to="/weekly-jodi-panna" className="btn btn-primary">
-              Weekly Jodi/Panna →
-            </Link>
-            <Link to="/free-guessing" className="btn btn-primary">
-              Free Guessing →
-            </Link>
+          <div className="footer-info">
+            <div className="website-url">https://sattamatkadpboss.co</div>
+            <div className="copyright">ALL RIGHTS RESERVED (2012-2023)</div>
+            <div className="site-owner">SITE OWNER:-</div>
+            <div className="owner-name">PRO. BIG BOSS SIR</div>
+            <div className="contact-number">08103944012</div>
+            <div className="website-url">https://sattamatkadpboss.co</div>
           </div>
         </div>
       </div>
